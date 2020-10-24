@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test DashBoard</title>
+</head>
+
+<style>
+  .grid-container {
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+  }
+  
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+  </style>
+
+
+
+<body>
+    <center style="margin-top: 50px;">
+      <h1>Take a quiz here</h1>
+      <h4>All the avaiable quizess</h4>
+    </center>
+    <div class="grid-container">
+      <form action="quize_questions" method="post">
+        {% csrf_token %}
+        {% for quiz in quizes %}
+        <button type="submit" name="id" class="grid-item" value={{quiz.rm}} >
+          {{quiz.title}}
+        </button>
+      {% endfor %}
+      </form>
+    </div>
+</body>
+</html>

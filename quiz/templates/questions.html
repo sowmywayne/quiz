@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <center>
+    <form action="quize_questions" method="get">
+      <h2>{{qnts.qnt}}</h2>
+      <input type="radio" value="1" name="opt"> a.{{qnts.opt1}}
+      <br>
+      <input type="radio" value="2" name="opt"> b.{{qnts.opt2}}
+      <br>
+      <input type="radio" value="3" name="opt"> c.{{qnts.opt3}}
+      <br>
+      <button style="margin-top: 40px;" type="submit">next</button>
+    </form>
+    <form action="view_answer" method="get">
+      <button type="submit">see the answer</button>
+    </form>
+    {% if ans %}
+    <h3>option {{ans}}</h3>
+    {% endif %}
+
+  </center>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>question completion</title>
+</head>
+<body>
+  <Center>
+    <h3 style="margin-top: 50px;">question creation completed</h3>
+    <form action="submition" method="POST">
+      {% csrf_token %}
+      <h3>Give title for your quiz</h3>
+      <input type="text" name="title", placeholder="title">
+      <input type="submit">
+    </form>
+  </Center>
+</body>
+</html>
